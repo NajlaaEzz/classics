@@ -9,90 +9,88 @@ to check each time.
 
 def listGenerator(n):
     """[summary]
-    This function returns a list of n random elements from 0 to n 
+    This function returns a list of n random elements from 0 to n
     Args:
         n ([int]): [number of elements in the returned list]
     Returns:
         [list]: [list of (n) random element]
     """
-    list = []
+    data = []
     for i in range(n):
-        list.append(rd.randint(0,n))
-    return list
+        data.append(rd.randint(0, n))
+    return data
 
 
-def checkIfSorted(list):
+def checkIfSorted(data):
     """[summary]
     Args:
-        list ([list]): [input list to check if sorted]
+        data ([list]): [input list to check if sorted]
     Returns:
         [bool]: [return True if the list is sorted, False elsewhere]
     """
-    for listIndex in range(len(list)-1):
-        if list[listIndex]>=list[listIndex+1]:
-            if listIndex==len(list)-2:
-                return True
-        else:
+    for i in range(len(data) - 1):
+        if data[i] > data[i + 1]:
             return False
+    return True
 
-def sortList(list):
+def sortList(data):
     """[summary]
 
     Args:
-        list ([list]): [list of int to sort]
+        data ([list]): [list of int to sort]
 
     Returns:
         [list]: [sorted list ]
     """
-    for n in range(len(list)-1):
-        for i in range(len(list)-1):
-            a=list[i]
-            b=list[i+1]
-            if list[i]<list[i+1]:
-                tempo=list[i]
-                list[i] =list[i+1]
-                list[i+1]=tempo
-    return list
+    for n in range(len(data) - 1):
+        for i in range(len(data) - 1):
+            a = data[i]
+            b = data[i + 1]
+            if data[i] > data[i + 1]:
+                tempo = data[i]
+                data[i] = data[i + 1]
+                data[i + 1] = tempo
+    return data
 
-def sortListOpt(list):
+def sortListOpt(data):
     """[summary]
     An optimized implementation of bubble sorting algorithm
     Args:
-        list ([list]): [list of int to sort]
+        data ([list]): [list of int to sort]
     Returns:
         [list]: [sorted list ]
     """
-    for n in range(len(list)-1):
-        for i in range(len(list)-1-n):
-            a=list[i]
-            b=list[i+1]
-            if list[i]<list[i+1]:
-                tempo=list[i]
-                list[i] =list[i+1]
-                list[i+1]=tempo
-    return list
+    for n in range(len(data) - 1):
+        for i in range(len(data) - 1 - n):
+            a = data[i]
+            b = data[i + 1]
+            if data[i] > data[i + 1]:
+                tempo = data[i]
+                data[i] = data[i + 1]
+                data[i + 1] = tempo
+    return data
 
 
-# Time analysis
+if __name__ == "__main__":
+    # Time analysis
 
-## Optimized version analysis
-before = time.time()
-outList = sortListOpt(listGenerator(100000))
-after = time.time()
-deltaOpt = after - before
-print(f"Opt : {deltaOpt}s ")
+    ## Optimized version analysis
+    before = time.time()
+    outList = sortListOpt(listGenerator(100000))
+    after = time.time()
+    deltaOpt = after - before
+    print(f"Opt : {deltaOpt}s ")
 
+    ## Naive version analysis
+    before = time.time()
+    outList = sortList(listGenerator(100000))
+    after = time.time()
+    delta = after - before
 
-## Naive version analysis
-before = time.time()
-outList = sortList(listGenerator(100000))
-after = time.time()
-delta = after - before
+    print(f"Norm: {delta}s ")
 
-print(f"Norm: {delta}s ")
-
-## Difference
-print(f"Diff: {int(deltaOpt/delta*100)}% ")
+    ## Difference
+    print(f"Diff: {int(deltaOpt/delta*100)}% ")
 
 
 
