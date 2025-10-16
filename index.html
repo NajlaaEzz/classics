@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ECOLUD</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="title-block">
+        <h1 data-i18n="siteTitle">ECOLUD</h1>
+        <p class="subtitle" data-i18n="tagline">
+          Assemble eco-friendly puzzles, learn planet-saving tips, and celebrate every win!
+        </p>
+      </div>
+      <div class="header-actions">
+        <label for="language-select" class="sr-only" data-i18n="languageLabel">Language</label>
+        <select id="language-select" class="language-select" aria-label="Language"></select>
+        <button id="music-toggle" class="pill-button" aria-pressed="false" data-i18n="playMusic">
+          Play Music
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section id="home-view" class="view">
+        <h2 class="section-title" data-i18n="chooseAdventure">Choose Your Eco Adventure</h2>
+        <div id="puzzle-list" class="card-grid" aria-live="polite"></div>
+      </section>
+
+      <section id="game-view" class="view" hidden>
+        <div class="game-toolbar">
+          <div class="toolbar-left">
+            <button id="back-button" class="pill-button" data-i18n="backToPuzzles">Back to Puzzles</button>
+            <button id="restart-button" class="pill-button secondary" data-i18n="restart">Restart</button>
+          </div>
+          <div class="toolbar-center">
+            <div class="info-chip" id="timer-display" aria-live="polite">Time: 00:00</div>
+            <div class="info-chip" id="piece-display" aria-live="polite">0 / 0 Pieces</div>
+            <div class="info-chip" id="hint-display" aria-live="polite">Hints: 3</div>
+          </div>
+          <div class="toolbar-right">
+            <button id="hint-button" class="pill-button accent" data-i18n="useHint">Use Hint</button>
+            <button id="fact-button" class="pill-button" data-i18n="ecoFact">Eco Fact</button>
+          </div>
+        </div>
+
+        <div class="game-layout">
+          <aside class="sidebar" aria-label="Puzzle progress">
+            <h3 data-i18n="progress">Progress</h3>
+            <div class="progress-wrapper">
+              <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <div class="progress-fill" id="progress-fill"></div>
+              </div>
+              <p id="progress-text">0% complete</p>
+            </div>
+
+            <h3 data-i18n="achievements">Achievements</h3>
+            <ul id="achievement-list" class="achievement-list"></ul>
+
+            <h3 data-i18n="stats">Stats</h3>
+            <ul class="stat-list">
+              <li><span data-i18n="totalCompleted">Total completed:</span> <span id="stats-completed">0</span></li>
+              <li><span data-i18n="uniqueThemes">Unique themes:</span> <span id="stats-themes">0</span></li>
+              <li><span data-i18n="hintsUsed">Hints used:</span> <span id="stats-hints">0</span></li>
+            </ul>
+          </aside>
+
+          <section class="board-panel">
+            <div class="board-header">
+              <h2 id="puzzle-title" data-i18n="puzzleHeading">Puzzle</h2>
+              <p id="puzzle-description" data-i18n="puzzleIntro">Assemble the pieces to reveal the eco scene.</p>
+            </div>
+            <div id="puzzle-board" class="puzzle-board" aria-label="Puzzle board" role="application"></div>
+            <div id="hint-overlay" class="hint-overlay" hidden aria-hidden="true"></div>
+            <div class="board-footer">
+              <p class="difficulty-label" id="difficulty-label">Difficulty: Explorer</p>
+              <p class="hint-reminder" data-i18n="hintReminder">
+                Need help? Use a hint to peek at the finished art for a moment!
+              </p>
+            </div>
+          </section>
+
+          <aside class="sidebar" aria-label="Eco learning">
+            <h3 data-i18n="ecoFact">Eco Fact</h3>
+            <p id="fact-text" data-i18n="factPrompt">Select a puzzle and press "Eco Fact" to learn something new!</p>
+            <div class="fact-history">
+              <h4 data-i18n="factJournal">Fact Journal</h4>
+              <ul id="fact-history" class="fact-list"></ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <div id="modal-layer" class="modal-layer" hidden>
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <h2 id="modal-title" data-i18n="ecoFact">Eco Fact</h2>
+        <p id="modal-body"></p>
+        <button id="modal-close" class="pill-button" data-i18n="close">Close</button>
+      </div>
+    </div>
+
+    <div id="completion-layer" class="modal-layer" hidden>
+      <div class="modal celebration" role="dialog" aria-modal="true" aria-labelledby="completion-title">
+        <div class="confetti" aria-hidden="true"></div>
+        <h2 id="completion-title" data-i18n="puzzleComplete">Puzzle Complete!</h2>
+        <p id="completion-summary"></p>
+        <ul id="completion-achievements" class="achievement-list"></ul>
+        <button id="celebration-close" class="pill-button accent" data-i18n="chooseAnother">
+          Choose Another Puzzle
+        </button>
+      </div>
+    </div>
+
+    <template id="puzzle-card-template">
+      <article class="puzzle-card">
+        <img class="puzzle-image" alt="" />
+        <div class="puzzle-body">
+          <h3></h3>
+          <p class="puzzle-description"></p>
+          <fieldset class="difficulty-group" role="radiogroup"></fieldset>
+          <button class="start-button pill-button accent" data-i18n="startPuzzle">Start Puzzle</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
