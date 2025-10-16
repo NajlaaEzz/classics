@@ -1,0 +1,62 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ocean-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6dd5fa"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+    <linearGradient id="ocean-water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0099f7"/>
+      <stop offset="100%" stop-color="#00c6ff"/>
+    </linearGradient>
+    <radialGradient id="ocean-sun" cx="0.5" cy="0.2" r="0.3">
+      <stop offset="0%" stop-color="#fff2a8"/>
+      <stop offset="100%" stop-color="#ffb347"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#ocean-sky)"/>
+  <circle cx="630" cy="120" r="90" fill="url(#ocean-sun)" opacity="0.9"/>
+  <g transform="translate(0,320)">
+    <path d="M0 120 C 90 80, 150 80, 220 110 C 290 140, 360 140, 440 110 C 520 80, 580 80, 660 110 C 740 140, 800 130, 800 130 L 800 280 L 0 280 Z" fill="url(#ocean-water)"/>
+    <path d="M0 160 C 90 130, 150 140, 220 165 C 290 190, 360 195, 440 170 C 520 145, 580 150, 660 180 C 740 210, 800 205, 800 205 L 800 280 L 0 280 Z" fill="#0072bb" opacity="0.5"/>
+  </g>
+  <g transform="translate(120,260)">
+    <path d="M160 0 C 220 10, 240 50, 240 90 C 240 130, 200 170, 150 190 C 100 210, 50 200, 20 170 C -10 140, -20 90, 0 60 C 20 30, 90 -5, 160 0" fill="#ff6f91"/>
+    <ellipse cx="130" cy="70" rx="18" ry="12" fill="#fff" opacity="0.9"/>
+    <ellipse cx="175" cy="60" rx="12" ry="10" fill="#fff" opacity="0.9"/>
+    <circle cx="112" cy="70" r="6" fill="#2c2c2c"/>
+    <circle cx="164" cy="60" r="6" fill="#2c2c2c"/>
+    <path d="M150 110 Q120 130 90 110" stroke="#b93b73" stroke-width="8" stroke-linecap="round" fill="none"/>
+    <path d="M60 60 Q 20 40, 0 70" stroke="#fff" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+    <path d="M200 90 Q 240 110, 210 140" stroke="#fff" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+  </g>
+  <g transform="translate(440,320)">
+    <path d="M30 0 C 60 -40, 120 -40, 160 20 C 190 60, 210 130, 160 150 C 110 170, 70 130, 50 110 C 30 90, 0 40, 30 0" fill="#ff9671"/>
+    <circle cx="85" cy="40" r="18" fill="#fff" opacity="0.9"/>
+    <circle cx="135" cy="50" r="14" fill="#fff" opacity="0.9"/>
+    <circle cx="80" cy="40" r="6" fill="#2c2c2c"/>
+    <circle cx="130" cy="52" r="6" fill="#2c2c2c"/>
+    <path d="M75 80 Q 110 90 125 80" stroke="#c84c4c" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <path d="M40 40 Q 0 40, 20 80" stroke="#fff" stroke-width="8" stroke-linecap="round" opacity="0.75"/>
+    <path d="M170 80 Q 210 90, 170 130" stroke="#fff" stroke-width="8" stroke-linecap="round" opacity="0.75"/>
+  </g>
+  <g>
+    <circle cx="150" cy="130" r="18" fill="#fff" opacity="0.7"/>
+    <circle cx="180" cy="150" r="16" fill="#fff" opacity="0.6"/>
+    <circle cx="210" cy="130" r="14" fill="#fff" opacity="0.5"/>
+  </g>
+  <g>
+    <circle cx="280" cy="100" r="20" fill="#fff" opacity="0.7"/>
+    <circle cx="320" cy="120" r="16" fill="#fff" opacity="0.6"/>
+    <circle cx="350" cy="95" r="12" fill="#fff" opacity="0.5"/>
+  </g>
+  <g transform="translate(60,470)">
+    <path d="M0 40 C 80 0, 160 0, 240 40" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.6"/>
+    <path d="M260 45 C 340 5, 420 10, 500 40" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.5"/>
+  </g>
+  <g transform="translate(640,360)">
+    <path d="M0 0 C 20 -50, 60 -50, 80 0 C 95 35, 80 55, 60 65 C 40 75, 10 60, 0 40 C -10 20, -5 15, 0 0" fill="#ffd15c"/>
+    <ellipse cx="35" cy="18" rx="12" ry="10" fill="#fff" opacity="0.85"/>
+    <circle cx="30" cy="18" r="4" fill="#2c2c2c"/>
+    <path d="M25 35 Q 40 40 48 35" stroke="#b76a00" stroke-width="5" stroke-linecap="round" fill="none"/>
+  </g>
+</svg>
